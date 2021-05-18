@@ -1,8 +1,8 @@
 FROM alpine:latest
 
-RUN apk update && apk add apache2 && apk add apache2-proxy && apk add apache2-ssl && m -rf /var/cache/apk/*
+RUN apk update && apk add apache2 && apk add apache2-proxy && apk add apache2-ssl && rm -rf /var/cache/apk/*
 
-copy . /var/www/html/
+copy . ./var/www/localhost/htdocs/index.html
 
 EXPOSE 80
 

@@ -10,12 +10,12 @@ pipeline {
     stages {
         stage('build') {
             parallel {
-                stage('branch2'){
+                stage('develope'){
                     steps {
-                        git branch: 'branch2', credentialsId: 'github-cred', url: 'https://github.com/priyanka24-hash/piyu.git'
+                        git branch: 'develope', credentialsId: 'github-cred', url: 'https://github.com/priyanka24-hash/piyu.git'
                         sh "ls -lart ./*"
                         sh "git branch -a"
-                        sh "git checkout branch2"
+                        sh "git checkout develope"
 
                 // Run Maven on a Unix agent.
                         echo "push happened on branch2"
@@ -26,10 +26,10 @@ pipeline {
                 stage('main') {
                     steps {
                 
-                        git branch: 'main', credentialsId: 'github-cred', url: 'https://github.com/priyanka24-hash/piyu.git'
+                        git branch: 'master', credentialsId: 'github-cred', url: 'https://github.com/priyanka24-hash/piyu.git'
                         sh "ls -lart ./*"
                         sh "git branch -a"
-                        sh "git checkout main"
+                        sh "git checkout master"
 
                 // Run Maven on a Unix agent.
                         echo "push happened on main branch"

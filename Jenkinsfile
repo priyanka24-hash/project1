@@ -19,6 +19,7 @@ pipeline {
 
                 // Run Maven on a Unix agent.
                         echo "push happened on branch2"
+                        mvn test
                     }
                 
                 }

@@ -7,9 +7,7 @@ pipeline {
     }
     stages {
         stage('master'){
-            when {
-                    branch 'master'
-                }
+       
 
               steps {
                         git branch: 'master', credentialsId: 'github-cred', url: 'https://github.com/priyanka24-hash/project1.git'

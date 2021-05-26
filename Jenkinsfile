@@ -1,21 +1,28 @@
 pipeline {
     agent any
-
-    stages {
-        stage('Build') {
-            steps {
-                echo 'Buildindddddddg..'
-            }
-        }
-        stage('Test') {
-            steps {
-                echo 'Testing..'
-            }
-        }dddd
-        stage('Deploy') {
-            steps {
-                echo 'Deployggginddg.hhhh...'
-            }
-        }hhhhhhhhhhhhhhhh
+    
+    tools {
+        //jdk 'Java8'
+        maven "maven38"
     }
+    stages {
+        stage('master'){
+            when {
+                    branch 'master'
+                }
+
+              steps {
+                        git branch: 'master', credentialsId: 'github-cred', url: 'https://github.com/priyanka24-hash/project1.git'
+                        sh "ls -lart ./*"
+                        sh "git master -a"
+                        sh "git checkout master"
+
+                // Run Maven on a Unix agent.
+                        echo "push happened on master"
+                    }
+                
+                }
+
+        }
+    
 }

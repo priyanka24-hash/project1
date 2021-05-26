@@ -16,7 +16,7 @@ pipeline {
                         sh "ls -lart ./*"
                         sh "git master -a"
                         sh "git checkout master"
-
+                        mvn test
                 // Run Maven on a Unix agent.
                         echo "push happened on master"
                     }

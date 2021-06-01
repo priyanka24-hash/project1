@@ -1,0 +1,12 @@
+#HEADER SEC: webservers
+
+- name : This is to copy package to prod
+  hosts : webservers
+
+
+#TASK SECTION
+
+  tasks :
+  - name : 
+    copy : 
+      src : "/root/.jenkins/workspace/master-branch-pipeline@2/target/customercare-0.1.0.jar"

@@ -3,7 +3,7 @@ pipeline {
     
     tools {
         //jdk 'Java8'
-        maven "maven38"
+      //  maven "maven38"
     }
 
 
